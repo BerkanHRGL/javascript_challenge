@@ -8,10 +8,7 @@ function generateRandomColor() {
 
 // Functie om disco-effect te maken
 function createDiscoBall() {
-    // Maak een nieuwe div aan voor de disco box
     const discoBox = document.createElement('div');
-    
-    // Stel de basis stijl van de disco box in
     discoBox.style.width = '200px';
     discoBox.style.height = '200px';
     discoBox.style.position = 'absolute';
@@ -26,9 +23,8 @@ function createDiscoBall() {
     discoBox.style.left = `${newPosition.x}px`;
     discoBox.style.top = `${newPosition.y}px`;
     
-    // Voeg animatie-functies toe
+
     function animate() {
-        // Willekeurige kleur
         discoBox.style.backgroundColor = generateRandomColor();
         
         // Willekeurige rotatie
@@ -42,25 +38,21 @@ function createDiscoBall() {
         discoBox.style.top = `${newPosition.y + moveY}px`;
     }
     
-    // Start continue animatie
     const animationInterval = setInterval(animate, 500);
     
-    // Voeg de disco box toe aan de body
     document.body.appendChild(discoBox);
     
-    // Begin meteen met animeren
     animate();
 }
 
 // Functie om disco-achtergrond te maken
-function createDiscoBachground() {
+function createDiscoBackground() {
     document.body.style.transition = 'background-color 0.5s ease';
     function changeBackground() {
         document.body.style.backgroundColor = generateRandomColor();
     }
     
-    // Verander elke 500ms
-    setInterval(changeBackground, 500);
+    setInterval(changeBackground, 100);
 }
 
 // Event listeners voor de knoppen
